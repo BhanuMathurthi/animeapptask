@@ -1,0 +1,22 @@
+#inp:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+
+@media (max-width: 575.98px) { 
+  .anime{
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) { 
+  #filtered{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .search{
+    width: auto;
+  }
+}
