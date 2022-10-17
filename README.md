@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+#FolderStructure
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+In src folder, there's main Components folder which is the parent folder for Individual Animes folder for individual anime details files, Filter for filter details, Search folder, Drag and Drop folder
 
-In the project directory, you can run:
 
-### `npm start`
+#libraries
+I have used bootstrap framework for styling, react icons for icon and react-router-dom for routing, react-draggable for drag and drop feature
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#StateManagament
+I have used useState hook for state management
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+#Homepage
+In Home page, I have declared the 3 states one is to track of all animes, second one is to track of filtereddata, thirdone is for loading symbol, initially the loading set to true, after getting the data, the loading will be setting again to false. so that data is successfully displaying on the page and fourth one is to keep track of genre 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+filtered results state is to keep track of filtered data
 
-### `npm run build`
+I have used asynchronous way of getting fetch api calls. and called that function in useEffect hook, so that the data will be displayed one time after component rerenders
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I have passed states as a prop to the search and filter components through the home page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+And i have written the condition like if loading is true, then I have to display the loading symbol then if loading is false, then data has to be displayed.
 
-### `npm run eject`
+again to display the data, I have written the condition with the ternary operator,
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+if seachinput length has > 1, then the filtered data has to be displayed, and then looped filtered data passed as a prop to the animecard component then in that component i have get the values directly
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+else if condition: if seachinput length has < 1, then the another state named as filterbasedongenre data has to be displayed, and then looped filtered data passed as a prop to the same animecard component 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+i wrote the condition for search animes based on the title, filtered data based on the user input,  if user types caps in input, then it's converted to lowercase 
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+and for each individual anime details, i get the id with useparams hook, so that dynamically for each individual anime data i have got with animeid
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+for filtered data based on the genre, first i have filtered the genres with filter menthod and then i loop through the every element in the array with map method, and at final it checks, if includes active genre in that everyAnime state or not
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
