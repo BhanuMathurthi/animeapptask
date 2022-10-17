@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import AnimeCard from "./TotalAnimeCards";
 import Draggable from "react-draggable"; // The default
 import { Link } from "react-router-dom";
-import SearchAnime from "./Search/SearchAnimes";
-import FilterAnimes from "./Filter/filterAnimes";
 import AnimePagination from "./AnimePagination";
+import FilterAnimes from "./Filter/FilterAnimes";
+import SearchAnime from "./Search/SearchAnimes";
+import AnimeCard from "./TotalAnimeCards";
 
 export default function Home() {
   const [everyAnime, setEveryAnime] = useState([]);
