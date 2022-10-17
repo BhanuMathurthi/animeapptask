@@ -3,9 +3,9 @@ import Draggable from "react-draggable";
 import { Link } from "react-router-dom";
 
 export default function DragAndDropAnimes() {
-  const [filteredResults, setFilteredResults] = useState([]);
+  const [filteredResults, setFilteredResults] = useState([])
 
-  const [positions, setPositions] = useState({});
+  const [positions, setPositions] = useState({})
 
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
